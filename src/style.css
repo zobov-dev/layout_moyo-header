@@ -1,3 +1,101 @@
-body {
+/* Базове скидання налаштувань браузера */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5; /* Тимчасовий сірий фон, щоб бачити білий хедер */
+}
+
+/* Змінні під твою Figma (висота фрейму 60px) */
+:root {
+  --blue-color: #00aeef; 
+  --text-color: #000000;
+  --link-height: 88px; 
+}
+
+/* ГОЛОВНИЙ КОНТЕЙНЕР ХЕДЕРА */
+/* Робить логотип і все меню в ОДНУ горизонтальну лінію */
+.header {
+  width: 100%;
+  height: var(--link-height);
+  background-color: #ffffff;
+  
+  display: flex;
+  align-items: center; /* Центрує контент вертикально всередині хедера */
+  justify-content: space-between; /* Логотип зліва, а навігація — справа */
+  
+  padding: 0 32px; /* Внутрішні відступи хедера зліва і справа */
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* ЛОГОТИП */
+.header__logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-img {
+  display: block;
+  height: 30px; /* Тимчасова висота, поки не підвантажиться твоє SVG */
+}
+
+/* НАВІГАЦІЙНЕ МЕНЮ (<ul>) */
+/* Вишиковує всі <li> в ОДНУ горизонтальну лінію та прибирає крапки */
+.header__menu {
+  display: flex; 
+  align-items: center;
+  list-style: none; /* ❌ ПРИБИРАЄ КРАПОЧКИ ПЕРЕД СЛОВАМИ */
+}
+
+/* Відступи між пунктами меню */
+.header__menu-item {
+  margin-right: 24px; /* Відстань між словами */
+}
+
+/* Прибираємо відступ у останнього слова (Photo) */
+.header__menu-item:last-child {
+  margin-right: 0;
+}
+
+/* ПОСИЛАННЯ (<a>) */
+/* Прибирає дефолтний синій колір та підкреслення */
+.header__menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--link-height);
+  padding: 0;
+  
+  text-decoration: none; /* ❌ ПРИБИРАЄ СТАНДАРТНЕ ПІДКРЕСЛЕННЯ */
+  color: var(--text-color); /* ❌ ПРИБИРАЄ СТАНДАРТНИЙ СИНІЙ КОЛІР */
+  font-weight: 500;
+  
+  text-transform: uppercase; /* Робить літери великими через CSS */
+  position: relative;
+  transition: color 0.15s ease-in-out;
+}
+
+/* Ефект при наведенні мишкою */
+.header__menu-link:hover {
+  color: #00ACDC;
+}
+  
+/* Активне посилання (Apple) */
+.header__menu-link.is-active {
+  color: var(--blue-color);
+}
+
+/* Лінія під активним посиланням */
+.header__menu-link.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* Товщина лінії */
+  background-color: var(--blue-color);
 }
