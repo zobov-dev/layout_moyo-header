@@ -1,4 +1,3 @@
-/* 💡 Виправлено: замість * використовуємо правильне скидання через конкретні теги */
 html {
   box-sizing: border-box;
 }
@@ -23,10 +22,8 @@ body {
   --link-height: 88px; 
 }
 
-/* ГОЛОВНИЙ КОНТЕЙНЕР ХЕДЕРА */
 .header {
   width: 100%;
-  /* 💡 Виправлено: height видалено, висота тепер задається внутрішнім контентом (посиланнями) */
   background-color: #fff;
   
   display: flex;
@@ -37,7 +34,6 @@ body {
   border-bottom: 1px solid #e5e5e5;
 }
 
-/* ЛОГОТИП */
 .header__logo-link {
   display: flex;
   align-items: center;
@@ -48,14 +44,12 @@ body {
   height: 30px; 
 }
 
-/* МЕНЮ */
 .header__menu {
   display: flex; 
   align-items: center;
   list-style: none; 
 }
 
-/* Відступи між пунктами меню */
 .header__menu-item {
   margin-right: 24px; 
 }
@@ -64,12 +58,11 @@ body {
   margin-right: 0;
 }
 
-/* ПОСИЛАННЯ (<a>) */
 .header__menu-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--link-height); /* Саме ця властивість тепер тримає висоту всього хедера */
+  height: var(--link-height);
   padding: 0;
   
   text-decoration: none; 
@@ -81,18 +74,14 @@ body {
   transition: color 0.15s ease-in-out;
 }
 
-/* Ефект при наведенні мишкою */
 .header__menu-link:hover {
-  /* 💡 Виправлено: тепер використовується правильна змінна замість хардкоду */
   color: var(--blue-color);
 }
   
-/* Активне посилання */
 .header__menu-link.is-active {
   color: var(--blue-color);
 }
 
-/* Лінія під активним посиланням */
 .header__menu-link.is-active::after {
   content: "";
   position: absolute;
