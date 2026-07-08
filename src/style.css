@@ -79,7 +79,6 @@ body {
   text-decoration: none;
   color: var(--text-color);
 
-  /* Додано базові властивості для точного Pixel Perfect збігу */
   font-size: 12px;
   letter-spacing: 0;
   font-weight: 500;
