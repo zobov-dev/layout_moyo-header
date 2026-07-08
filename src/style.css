@@ -1,11 +1,14 @@
-html {
+html,
+body,
+.header,
+.header__logo-link,
+.header__logo-img,
+.header__nav,
+.header__menu,
+.header__menu-item,
+.header__menu-link,
+.header__menu-link::after {
   box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
 }
 
 body,
